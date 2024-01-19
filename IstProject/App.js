@@ -2,19 +2,21 @@ import React, { useState } from 'react'
 import { View , Text, Button} from 'react-native'
 import Header from './components/Header.jsx';
 import Props from './components/Props.jsx';
+import InputText from './components/InputText.jsx';
+import SimpleForm from './components/SimpleForm.jsx';
+import FlatListUser from './components/FlatListUser.jsx';
+import ListMapFunc from './components/ListMapFunc.jsx';
+import Grid from './components/Grid.jsx';
 
 function App() {
-  function fruit( ) {
-    return 'Apple';
-  }
+ 
   function hello(){
     setName('Hello My name is Uddeshya')
     // console.log(val);
     // console.warn(val)
   }
 
-
-  const [name , setName] = useState('Uddeshya');
+  const [name , setName] = useState('');
   const [learning, setLearning] = useState('React Native')
   let age = 23;
   let data = {
@@ -26,12 +28,17 @@ function App() {
  
   // let name = "Uddeshya"
   return (
-    <View>
+    <View style={{backgroundColor: "lightblue", flex:1}}>
       <Header/>
       <Text style={{fontSize : 30}}>{name}</Text>
-      <Text>hello my favrite fruit is {fruit()}</Text>
-      <Button  title='Click here' color={'red'} onPress={()=> hello()}></Button>
-      <Props data={data}/>
+      
+      <Button  title='Click here' color={'red'} onPress={hello}></Button>
+      {/* <Props data={data}/> */}
+      {/* <InputText/> */}
+      {/* <SimpleForm/> */}
+        <FlatListUser/>
+      {/* <ListMapFunc/>  */}
+      {/* <Grid/> */}
     </View>
   )
 }
