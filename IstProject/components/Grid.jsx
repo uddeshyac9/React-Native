@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 function Grid() {
+ let timer = setInterval(() => {
+    console.warn('Timer Called')
+  }, 2000);
+  useEffect(() => {
+   return () => clearInterval(timer)
+  })
   const users = [
     { id: 1, username: 'john_doe' },
     { id: 2, username: 'jane_smith' },
@@ -10,7 +16,7 @@ function Grid() {
     { id: 5, username: 'emma_davis' },
     { id: 6, username: 'charlie_brown' },
     { id: 7, username: 'olivia_smith' },
-    { id: 8, username: 'samuel_jackson' },
+    { id: 8, username: 'samuel_jack' },
     { id: 9, username: 'grace_hall' },
     { id: 10, username: 'alex_turner' },
   ];

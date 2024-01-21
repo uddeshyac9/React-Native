@@ -7,6 +7,9 @@ import SimpleForm from './components/SimpleForm.jsx';
 import FlatListUser from './components/FlatListUser.jsx';
 import ListMapFunc from './components/ListMapFunc.jsx';
 import Grid from './components/Grid.jsx';
+import Sectionlist from './components/Sectionlist.jsx';
+import Hooks from './components/Hooks.jsx';
+import ShowHide from './components/ShowHide.jsx';
 
 function App() {
  
@@ -36,9 +39,12 @@ function App() {
       {/* <Props data={data}/> */}
       {/* <InputText/> */}
       {/* <SimpleForm/> */}
-        <FlatListUser/>
+        {/* <FlatListUser/> */}
       {/* <ListMapFunc/>  */}
       {/* <Grid/> */}
+      {/* <Sectionlist/> */}
+      {/* <Hooks/> */}
+      <ShowHide/>
     </View>
   )
 }
