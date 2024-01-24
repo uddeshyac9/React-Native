@@ -16,8 +16,8 @@ function App() {
 
   const currencyPerRupee = {
     DOLLAR: 0.012,
-    EURO: 0.012,
-    POUND: 0.93,
+    EURO: 0.011,
+    POUND: 0.0093,
     RUBEL: 0.93,
     AUSDOLLAR: 0.2,
     CANDOLLAR: 0.019,
