@@ -10,7 +10,7 @@ import Grid from './components/Grid.jsx';
 import Sectionlist from './components/Sectionlist.jsx';
 import Hooks from './components/Hooks.jsx';
 import ShowHide from './components/ShowHide.jsx';
-
+import Flex from './components/Flex.jsx';
 function App() {
  
   function hello(){
@@ -44,7 +44,8 @@ function App() {
       {/* <Grid/> */}
       {/* <Sectionlist/> */}
       {/* <Hooks/> */}
-      <ShowHide/>
+      {/* <ShowHide/> */}
+      {/* <Flex/> */}
     </View>
   )
 }
