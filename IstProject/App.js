@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View , Text, Button} from 'react-native'
+import { View , Text, Button,ScrollView} from 'react-native'
 import Header from './components/Header.jsx';
 import Props from './components/Props.jsx';
 import InputText from './components/InputText.jsx';
@@ -11,6 +11,10 @@ import Sectionlist from './components/Sectionlist.jsx';
 import Hooks from './components/Hooks.jsx';
 import ShowHide from './components/ShowHide.jsx';
 import Flex from './components/Flex.jsx';
+import MyRadioButton from './components/MyRadioButton.jsx';
+import Loader from './components/Loader.jsx';
+
+import OpenModal from './components/Modal.jsx';
 function App() {
  
   function hello(){
@@ -31,7 +35,7 @@ function App() {
  
   // let name = "Uddeshya"
   return (
-    <View style={{backgroundColor: "lightblue", flex:1}}>
+    <ScrollView style={{ flex:1}}>
       <Header/>
       <Text style={{fontSize : 30}}>{name}</Text>
       
@@ -46,7 +50,10 @@ function App() {
       {/* <Hooks/> */}
       {/* <ShowHide/> */}
       {/* <Flex/> */}
-    </View>
+      {/* <MyRadioButton/> */}
+      {/* <Loader/> */}
+      <OpenModal/>
+    </ScrollView>
   )
 }
 
