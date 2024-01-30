@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View , Text, Button,ScrollView} from 'react-native'
+import { View , Text, Button,ScrollView, StatusBar} from 'react-native'
 import Header from './components/Header.jsx';
 import Props from './components/Props.jsx';
 import InputText from './components/InputText.jsx';
@@ -15,6 +15,11 @@ import MyRadioButton from './components/MyRadioButton.jsx';
 import Loader from './components/Loader.jsx';
 
 import OpenModal from './components/Modal.jsx';
+import PressebleBtn from './components/PressebleBtn.jsx';
+import StatusBarChange from './components/StatusBarChange.jsx';
+import PlatformComp from './components/PlatformComp.jsx';
+
+import WebViewComp from './components/WebViewComp.jsx';
 function App() {
  
   function hello(){
@@ -35,11 +40,15 @@ function App() {
  
   // let name = "Uddeshya"
   return (
+    // <WebViewComp/>
     <ScrollView style={{ flex:1}}>
+      
       <Header/>
+     
       <Text style={{fontSize : 30}}>{name}</Text>
       
       <Button  title='Click here' color={'red'} onPress={hello}></Button>
+    
       {/* <Props data={data}/> */}
       {/* <InputText/> */}
       {/* <SimpleForm/> */}
@@ -53,7 +62,11 @@ function App() {
       {/* <MyRadioButton/> */}
       {/* <Loader/> */}
       <OpenModal/>
-    </ScrollView>
+      {/* <PressebleBtn/> */}
+    <StatusBarChange/>
+    {/* <PlatformComp/> */}
+    
+            </ScrollView>
   )
 }
 
