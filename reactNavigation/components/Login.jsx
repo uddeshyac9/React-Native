@@ -8,7 +8,7 @@ const Login = ({ navigation }) => {
   const handleLogin = () => {
     // Implement your authentication logic here
     // For simplicity, let's assume login is successful for any input
-    navigation.navigate('Home');
+    navigation.navigate('Home',{username});
   };
 
   return (
@@ -20,6 +20,7 @@ const Login = ({ navigation }) => {
         placeholderTextColor="black"
         value={username}
         onChangeText={(text) => setUsername(text)}
+        
       />
       <TextInput
         style={styles.input}
