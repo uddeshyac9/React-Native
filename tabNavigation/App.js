@@ -7,6 +7,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import JokesList from './components/JokesList';
 
 function App() {
   const Tab = createMaterialTopTabNavigator()
@@ -17,6 +18,7 @@ function App() {
         <Tab.Screen name='Login' component={Login} />
         <Tab.Screen name='Signup' component={Signup} />
         <Tab.Screen name='About' component={About} />
+        <Tab.Screen name='Jokes' component={JokesList} />
       
       </Tab.Navigator>
     </NavigationContainer>
