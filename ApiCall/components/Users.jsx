@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
-function Users() {
+function Users( {navigation}) {
   const [data, setData] = useState([]);
   const apiurl = "http://192.168.1.20:3000/users";
   // const apiurl = "http://10.0.0.2:3000/users";
@@ -20,7 +20,7 @@ function Users() {
 
         if (result) {
           setData(result);
-          console.log(data);
+         
         }
 
       } catch (error) {
@@ -28,10 +28,16 @@ function Users() {
         console.warn('Data is Not Fetched');
       }
     };
-
+// Fetch and set data when the component mounts
     fetchUsers();
 
-  }, []);
+     // Add a focus event listener to refresh data when the tab is focused
+    const unsubscribe = navigation.addListener('focus', () => {
+      fetchUsers();
+    })
+     // Cleanup the listener when the component is unmounted
+     return unsubscribe;
+  }, [navigation]);
 
   return (
     <ScrollView>

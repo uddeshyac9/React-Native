@@ -5,11 +5,11 @@ import { View, Text, StyleSheet,TextInput, Button,Alert } from 'react-native';
 function AddUsers() {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
-  const [fullname, setFullname] = useState('')
+  const [fullName, setFullName] = useState('')
   const [age, setAge] = useState(0)
  
   const validateFields = () => {
-    if (!username || !email || !fullname || !age) {
+    if (!username || !email || !fullName || !age) {
       Alert.alert('Validation Error', 'Please fill in all fields');
       return false;
     } 
@@ -39,7 +39,7 @@ function AddUsers() {
           id: uniqueId,
           username: username,
           email: email,
-          fullname: fullname,
+          fullname: fullName,
           age: age,
         }),
       });
@@ -69,8 +69,11 @@ function AddUsers() {
         <View style={styles.container}>
             <Text style={styles.header}> Add User by Post Api Call</Text>
             <TextInput type="text" value={username} placeholder='enter username'   placeholderTextColor="black" style={styles.input} onChangeText={(newusername) => setUsername(newusername)}/>
+            
             <TextInput type="email" value={email} placeholder='enter email'   placeholderTextColor="black" style={styles.input} onChangeText={(Newemail) => setEmail(Newemail)}/>
-            <TextInput type="text" value={fullname} placeholder='enter fullName' placeholderTextColor="black"  style={styles.input} onChangeText={(newfullname) => setFullname(newfullname)}/>
+
+            <TextInput type="text" value={fullName} placeholder='enter fullName' placeholderTextColor="black"  style={styles.input} onChangeText={(newfullname) => setFullName(newfullname)}/>
+
             <TextInput keyboardType='numeric' value={`${age}`} placeholder='enter age' placeholderTextColor="black" style={styles.input} onChangeText={(newage) => setAge(newage)} />
 
             <Button title='Save Data' onPress={() => PostApiCall()}/>
