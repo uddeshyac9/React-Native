@@ -5,11 +5,11 @@ import { View, Text, StyleSheet,TextInput, Button,Alert } from 'react-native';
 function AddUsers() {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
-  const [fullName, setFullName] = useState('')
-  const [age, setAge] = useState(0)
+  const [fullname, setFullname] = useState('')
+  const [age, setAge] = useState('')
  
   const validateFields = () => {
-    if (!username || !email || !fullName || !age) {
+    if (!username || !email || !fullname || !age) {
       Alert.alert('Validation Error', 'Please fill in all fields');
       return false;
     } 
@@ -39,7 +39,7 @@ function AddUsers() {
           id: uniqueId,
           username: username,
           email: email,
-          fullname: fullName,
+          fullname: fullname,
           age: age,
         }),
       });
@@ -68,13 +68,13 @@ function AddUsers() {
     return (
         <View style={styles.container}>
             <Text style={styles.header}> Add User by Post Api Call</Text>
-            <TextInput type="text" value={username} placeholder='enter username'   placeholderTextColor="black" style={styles.input} onChangeText={(newusername) => setUsername(newusername)}/>
+            <TextInput type="text" value={username} placeholder='enter username'   placeholderTextColor="grey" style={styles.input} onChangeText={(newusername) => setUsername(newusername)}/>
             
-            <TextInput type="email" value={email} placeholder='enter email'   placeholderTextColor="black" style={styles.input} onChangeText={(Newemail) => setEmail(Newemail)}/>
+            <TextInput type="email" value={email} placeholder='enter email'   placeholderTextColor="grey" style={styles.input} onChangeText={(Newemail) => setEmail(Newemail)}/>
 
-            <TextInput type="text" value={fullName} placeholder='enter fullName' placeholderTextColor="black"  style={styles.input} onChangeText={(newfullname) => setFullName(newfullname)}/>
+            <TextInput type="text" value={fullname} placeholder='enter fullName' placeholderTextColor="grey"  style={styles.input} onChangeText={(newfullname) => setFullname(newfullname)}/>
 
-            <TextInput keyboardType='numeric' value={`${age}`} placeholder='enter age' placeholderTextColor="black" style={styles.input} onChangeText={(newage) => setAge(newage)} />
+            <TextInput keyboardType='numeric' value={age} placeholder='enter age' placeholderTextColor="grey" style={styles.input} onChangeText={(newage) => setAge(newage)} />
 
             <Button title='Save Data' onPress={() => PostApiCall()}/>
 
