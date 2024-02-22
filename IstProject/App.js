@@ -20,6 +20,7 @@ import StatusBarChange from './components/StatusBarChange.jsx';
 import PlatformComp from './components/PlatformComp.jsx';
 
 import WebViewComp from './components/WebViewComp.jsx';
+import UseRef from './components/UseRef.jsx';
 function App() {
  
   function hello(){
@@ -45,9 +46,9 @@ function App() {
       
       <Header/>
      
-      <Text style={{fontSize : 30}}>{name}</Text>
+      {/* <Text style={{fontSize : 30}}>{name}</Text> */}
       
-      <Button  title='Click here' color={'red'} onPress={hello}></Button>
+      {/* <Button  title='Click here' color={'red'} onPress={hello}></Button> */}
     
       {/* <Props data={data}/> */}
       {/* <InputText/> */}
@@ -61,10 +62,11 @@ function App() {
       {/* <Flex/> */}
       {/* <MyRadioButton/> */}
       {/* <Loader/> */}
-      <OpenModal/>
-      {/* <PressebleBtn/> */}
-    <StatusBarChange/>
+     {/* <OpenModal/> */}
+      { /* <PressebleBtn/> */}
+    {/* <StatusBarChange/> */}
     {/* <PlatformComp/> */}
+    <UseRef/>
     
             </ScrollView>
   )
