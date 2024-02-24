@@ -66,7 +66,7 @@ function App() {
       { /* <PressebleBtn/> */}
     {/* <StatusBarChange/> */}
     {/* <PlatformComp/> */}
-    <UseRef/>
+    {/* <UseRef/> */}
     
             </ScrollView>
   )
