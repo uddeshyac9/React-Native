@@ -21,6 +21,7 @@ import PlatformComp from './components/PlatformComp.jsx';
 
 import WebViewComp from './components/WebViewComp.jsx';
 import UseRef from './components/UseRef.jsx';
+import Async_Storage from './components/Async_Storage.jsx';
 function App() {
  
   function hello(){
@@ -67,6 +68,7 @@ function App() {
     {/* <StatusBarChange/> */}
     {/* <PlatformComp/> */}
     {/* <UseRef/> */}
+    <Async_Storage/>
     
             </ScrollView>
   )
