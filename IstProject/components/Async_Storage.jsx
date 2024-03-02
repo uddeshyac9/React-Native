@@ -27,7 +27,7 @@ function Async_Storage() {
             <Text style={{marginBottom:10}}>UserName : {user}</Text>
          <Text style={{marginBottom:10}}> <Button title="set Data" onPress={() => setData()}/> </Text>   
           <Text style={{marginBottom:10}}> <Button title="get Data" onPress={() => getData()}/></Text>
-          <Button title='Remove Data' onPress={()=> removeData( )}/>  
+          <Button title='Remove Data' onPress={()=> removeData()}/>  
         </View>
         
     )
