@@ -41,7 +41,7 @@ function Home() {
                 loading ?  <Spinner visible={loading} textContent={'Loading...'}  /> 
                  : products.map((item) => {
                     return <View key={item.id}> 
-                    <Product post={item}/>
+                    <Product item={item}/>
                     </View>
                  })  
             }

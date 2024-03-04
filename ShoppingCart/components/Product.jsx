@@ -1,39 +1,52 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { useDispatch,useSelector } from 'react-redux';
+import { View, Text, Image, TouchableOpacity, StyleSheet, Button} from 'react-native';
+import { add, remove } from '../redux/features/CartSlice';
 
-const Product = ({ post, cart, addToCart, removeFromCart }) => {
+const Product = ({ item }) => {
+ const cart = useSelector((state) => state.cart || [])
+  const Dispatch = useDispatch()
+
+  const addToCart = (item) => {
+     Dispatch(add(item))
+     console.warn('Item added in Cart')
+     console.log(item);
+  }
+  const removeFromCart = () => {
+    Dispatch(remove(item.id))
+  }
+  
+
+
+
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.title}>{post.title}</Text>
+        <Text style={styles.title}>{item.title}</Text>
       </View>
       <View>
         <Text style={styles.description}>
-          {post.description.split(' ').slice(0, 15).join(' ') + '...'}
+          {item.description.split(' ').slice(0, 15).join(' ') + '...'}
         </Text>
       </View>
       <View style={styles.imageContainer}>
-        <Image source={{ uri: post.image }} style={styles.image} />
+        <Image source={{ uri: item.image }} style={styles.image} />
       </View>
 
-      {/* <View style={styles.bottomContainer}>
+      <View style={styles.bottomContainer}>
         <View>
-          <Text style={styles.price}>${post.price}</Text>
+          <Text style={styles.price}>${item.price}</Text>
+          
         </View>
-        {cart.some((cartItem) => cartItem.id === post.id) ? (
-          <TouchableOpacity
-            style={styles.cartButton}
-            onPress={removeFromCart}>
-            <Text style={styles.cartButtonText}>Remove Item</Text>
-          </TouchableOpacity>
-        ) : (
-          <TouchableOpacity
-            style={styles.cartButton}
-            onPress={addToCart}>
-            <Text style={styles.cartButtonText}>Add to Cart</Text>
-          </TouchableOpacity>
-        )}
-      </View> */}
+
+        <View>
+        <Button title='Add to Cart' onPress={() => addToCart(item)} />
+
+
+        </View>
+        </View> 
+
+ 
     </View>
   );
 };
@@ -59,6 +72,9 @@ const styles = StyleSheet.create({
     color: '#666',
     fontSize: 12,
     width: 180,
+    alignSelf:'center',
+    textAlign:'center',
+    marginBottom:15
   },
   imageContainer: {
     height: 180,
@@ -67,7 +83,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: null,
     height: null,
-    resizeMode: 'cover',
+    resizeMode: 'contain', // Use 'contain' for fitting inside the container
     borderRadius: 8,
   },
   bottomContainer: {
