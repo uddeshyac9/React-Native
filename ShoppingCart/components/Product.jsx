@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 import { View, Text, Image, TouchableOpacity, StyleSheet, Button} from 'react-native';
 import { add, remove } from '../redux/features/CartSlice';
+import Toast from 'react-native-toast-message';
 
 const Product = ({ item }) => {
  const cart = useSelector((state) => state.cart || [])
@@ -9,11 +10,21 @@ const Product = ({ item }) => {
 
   const addToCart = (item) => {
      Dispatch(add(item))
-     console.warn('Item added in Cart')
-     console.log(item);
+     Toast.show({
+      type: 'success',
+      text1: 'Item added to Cart',
+
+      
+    });
+     
   }
   const removeFromCart = () => {
     Dispatch(remove(item.id))
+    Toast.show({
+      type: 'info',
+      text1: 'Item Remove From Cart',
+      
+    });
   }
   
 
@@ -38,12 +49,14 @@ const Product = ({ item }) => {
           <Text style={styles.price}>${item.price}</Text>
           
         </View>
-
         <View>
-        <Button title='Add to Cart' onPress={() => addToCart(item)} />
+  {cart.some((cartItem) => cartItem.id === item.id) ? (
+    <Button title='Remove Item' onPress={() => removeFromCart()} />
+  ) : (
+    <Button title='Add to Cart' onPress={() => addToCart(item)} />
+  )}
+</View>
 
-
-        </View>
         </View> 
 
  
@@ -67,6 +80,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
     marginBottom: 5,
+    textAlign:'center'
   },
   description: {
     color: '#666',
@@ -85,6 +99,7 @@ const styles = StyleSheet.create({
     height: null,
     resizeMode: 'contain', // Use 'contain' for fitting inside the container
     borderRadius: 8,
+    marginBottom: 5,
   },
   bottomContainer: {
     flexDirection: 'row',
@@ -110,6 +125,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textTransform: 'uppercase',
   },
+  
 });
 
 export default Product;
